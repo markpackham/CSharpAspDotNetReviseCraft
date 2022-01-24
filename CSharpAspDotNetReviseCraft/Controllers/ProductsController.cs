@@ -22,5 +22,16 @@ namespace CSharpAspDotNetReviseCraft.Controllers
             return ProductService.GetProducts();
         }
 
+        // rating url example
+        // https://localhost:7171/products/rate?ProductId=jenlooper-cactus&Rating=4
+        [Route("Rate")]
+        [HttpGet]
+        public ActionResult Get([FromQuery] string ProductId, [FromQuery] int Rating)
+        {
+            ProductService.AddRating(ProductId, Rating);
+            // an Http 200
+            return Ok();
+        }
+
     }
 }
