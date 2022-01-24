@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddControllers();
 builder.Services.AddTransient<JsonFileProductService>();
 
 var app = builder.Build();
@@ -34,5 +35,7 @@ app.MapRazorPages();
 //    var json = JsonSerializer.Serialize<IEnumerable<Product>>(products);
 //    return context.Response.WriteAsync(json);
 //});
+
+app.MapControllers();
 
 app.Run();
