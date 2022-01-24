@@ -30,5 +30,12 @@ namespace CSharpAspDotNetReviseCraft.Services
                     });
             }
         }
+
+        public void AddRating(string productId, int rating)
+        {
+            var products = GetProducts();
+
+            var query = products.First(x => x.Id == productId);
+        }
     }
 }
