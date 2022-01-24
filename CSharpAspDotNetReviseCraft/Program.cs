@@ -24,5 +24,10 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapGet("/products", (contaxt) =>
+{
+    var products = app.Services.GetService<JsonFileProductService>().GetProducts();
+    var json = JsonSerializer;
+});
 
 app.Run();
