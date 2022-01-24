@@ -1,4 +1,4 @@
-﻿using CSharpAspDotNetReviseCraft.Models;
+using CSharpAspDotNetReviseCraft.Models;
 using System.Text.Json;
 
 namespace CSharpAspDotNetReviseCraft.Services
@@ -50,7 +50,7 @@ namespace CSharpAspDotNetReviseCraft.Services
 
             using (var outputStream = File.OpenWrite(JsonFileName))
             {
-                JsonSerializer.Serialize<IEnumerable<Product>>({
+                JsonSerializer.Serialize<IEnumerable<Product>>(
                     new Utf8JsonWriter(outputStream, new JsonWriterOptions
                     {
                         SkipValidation = true,
