@@ -1,4 +1,5 @@
-﻿using CSharpAspDotNetReviseCraft.Services;
+﻿using CSharpAspDotNetReviseCraft.Models;
+using CSharpAspDotNetReviseCraft.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,11 @@ namespace CSharpAspDotNetReviseCraft.Controllers
 
         public JsonFileProductService ProductService { get; set; }
 
+        [HttpGet]
+        public IEnumerable<Product> Get()
+        {
+            return ProductService.GetProducts();
+        }
 
     }
 }
