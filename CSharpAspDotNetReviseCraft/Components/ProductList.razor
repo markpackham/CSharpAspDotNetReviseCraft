@@ -46,7 +46,7 @@
 
     int currentRating = 0;
     int voteCount = 0;
-    string voteLabel;
+    string voteLabel = "Votes";
 
     void GetCurrentRating()
     {
@@ -62,12 +62,12 @@
             currentRating = selectedProduct.Ratings.Sum() / voteCount;
         }
 
-        System.Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
+        Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
     }
 
     void SubmitRating(int rating)
     {
-        System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
+        Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
         ProductService.AddRating(selectedProductId, rating);
         SelectProduct(selectedProductId);
     }
