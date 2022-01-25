@@ -13,6 +13,10 @@
             <h5 class="card-title">@product.Title</h5>
         </div>
         <div class="card-footer">
+             <small class="text-muted"><button @onclick="(e => WriteProduct(product.Id))" 
+              class="btn btn-primary">Write Product To Console</button>
+            </small>
+
             <small class="text-muted"><button @onclick="(e => SelectProduct(product.Id))" 
               data-toggle="modal" data-target="#productModal" class="btn btn-primary">More Info</button>
             </small>
@@ -26,6 +30,12 @@
     Product selectedProduct;
     string selectedProductId;
 
+    void WriteProduct(string productId)
+    {
+        selectedProductId = productId;
+        selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
+        Console.WriteLine(selectedProduct.Title);
+    }
 
     void SelectProduct(string productId)
     {
