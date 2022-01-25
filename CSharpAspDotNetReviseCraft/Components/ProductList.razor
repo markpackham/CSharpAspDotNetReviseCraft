@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web
 @using CSharpAspDotNetReviseCraft.Models;
 @using CSharpAspDotNetReviseCraft.Services;
 @inject JsonFileProductService ProductService
@@ -11,6 +11,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">@product.Title</h5>
+            <h5 class="card-title">@product.Id</h5>
         </div>
     </div>
    <div class="card-footer">
