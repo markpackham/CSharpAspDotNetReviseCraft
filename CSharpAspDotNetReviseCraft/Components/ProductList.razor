@@ -53,6 +53,11 @@
 
         System.Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
     }
+
+    void SubmitRating(int rating)
+    {
+        System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
+    }
 }
 
 @if(selectedProduct != null)
